@@ -1,0 +1,614 @@
+//VARIABLES
+
+$nav-color: #8cc2d3;
+$header-font: Amatic SC, cursive;
+$ocean-color: #519baf;
+$shop-color: #edccb4;
+$wood-color: #b7855c;
+
+// MIXINS 
+
+@mixin title {
+    font-family: $header-font;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+@mixin centered {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+//NAVIGATION & TITLES
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+.navbar-default,
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:hover {
+    border-color: $ocean-color;
+    background-color: $nav-color;
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar-nav li {
+	padding: 5px;
+	&:hover {
+            background-image: url(ref/nav-hover2.png);
+            background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+        }
+}
+
+.navbar-nav li a {
+    @include title;
+    font-size: 38px;
+    margin: 5px 5px;
+    width: 120px;
+	color: black !important;    
+}  
+
+.btn.more-info {
+	margin: 20px 0;
+	@include border-radius(25px);
+	border: 1px solid white;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	transition: all 0.6s;
+    position: relative;
+	overflow: hidden;
+	color: white;
+	font-weight: 800;
+	margin-top: 20px;
+}
+
+.btn.more-info.lineup {
+	background-color: $ocean-color;
+}
+
+.btn.more-info.tickets {
+	background-color: $wood-color;
+}
+
+.btn.more-info:hover {
+	background-color: darken($ocean-color, 8%);
+	color: white;
+	font-size: 18px;
+}
+
+.btn.more-info.tickets:hover {
+	background-color: darken($wood-color, 8%);
+}
+
+.top.content {
+  @include centered;
+}
+.bottom.content {
+  @include centered;
+  top: 40px;
+}
+.btn:hover .top {
+  top: -40px;
+}
+.btn:hover .bottom {
+  top: 8px;
+}
+.btn .content {
+  transition: top 0.6s;
+}
+
+.arrow-down {
+    height: 70px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(ref/arrow-down.png);
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h2, h3 {
+	@include title;
+}
+
+h1 {
+	background: url(ref/title-frame.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 25px 0;
+	margin: 50px 0;
+	text-align: center;
+	color: black;
+	font-family: $header-font;
+	font-weight: bolder;
+	font-size: 80px;
+}
+
+.title {
+    @include title;
+    font-size: 70px;
+	margin: 0;
+	padding: 50px 0;
+}
+
+#lineup-title {
+	margin-top: 600px;    
+}
+
+//CONTAINERS
+
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.row {
+	margin: 0;
+}
+
+#main-lineup {
+    background: {
+        image: url(ref/main-lineup-background.png);
+        repeat: repeat-x;
+        position: center top;
+    }
+    margin-top: 50px;
+    height: 1346px;
+    position: relative;
+}
+
+#tickets {
+    background: {
+		image: url(ref/tickets-background2.png);
+        position: center top;
+    }
+   
+	padding-bottom: 50px;
+}
+
+#shop {
+	background-color: $wood-color;
+	
+}
+
+#boat-end {
+	height: 100px;
+	background: url(ref/tickets-background.png);
+	background-position: bottom;
+}
+
+#info {
+	background: url(ref/info-background.png);
+	background-color: $ocean-color;
+	padding-bottom: 100px
+}
+
+#footer {
+	padding-top: 40px;
+	background: darken($ocean-color, 10%);
+}
+
+//MAIN 
+
+.logo {
+    @include centered;
+    max-height: 180px;
+    top: 50px;
+}
+
+.intro {
+    @include centered;
+    top: 240px;
+}
+
+//LINEUP 
+
+.lineup {
+	.row {
+    	margin: 10px 0px;
+        padding: 5px;
+        background-color: rgba(255,255,255,0.3);
+        @include border-radius(5px);
+        text-align: center;
+        }
+        h3 {
+            font-weight: 900;
+            font-size: 60px;
+            margin: 0;
+            text-align: center;
+            color: $ocean-color;
+        }
+        li {
+            font-size: 24px;
+            font-weight: 800;    
+        }
+}
+
+.bullet {
+    margin-right: 6px;
+    margin-left: -7px;
+    color: $ocean-color;
+}
+
+//TICKETS 
+
+.tickets {
+	margin-top: 70px;
+}
+
+.boat-window {
+    margin: auto;
+    background-image: url(ref/boat-window3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    }
+
+.buy-now, .sold-out {
+    @include centered;
+    left: -8px;
+    top: 37px;
+    height: 117px;
+    width: 117px;
+    border-radius: 50%;
+    background-color: darken($ocean-color, 20%);
+    color: $ocean-color;
+    transition: all 0.6s ease; 
+    p {
+        line-height: 50px; 
+        font-family: $header-font;
+        font-weight: 400;
+        font-size: 58px;
+        margin-top: 7px;    
+    }
+}
+
+.buy-now:hover {
+    background-color: $ocean-color;
+    color: white;
+}
+
+.tickets-day, .tickets-price {
+    margin-top: 20px;
+    font-weight: 800;
+    color: white;
+    font-size: 18px;
+}
+
+.tickets-price {
+    margin-top: -10px;
+    color: darken($ocean-color, 15%);
+    font-size: 22px;
+}
+
+//SHOP
+
+.row.shop {
+	margin-bottom: 30px;
+}
+
+.product-preview .product {
+	position:relative;
+	margin:auto;
+	width:70%;
+	height:70%;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.size-pick p, .formcontrol {
+	display: inline-block;
+}
+
+.formcontrol {
+	background-color: $shop-color;
+	border: none;
+	padding: 5px;
+}
+
+//PARTNERS
+
+.partners-more {
+	margin: 30px auto;
+	h3 {
+		color: black;
+		font-size: 50px;
+	}
+	span {
+		font-size: 40px;
+		color: $ocean-color;
+	}
+	p {
+		font-size: 18px;
+		line-height: 1;
+		text-align: justify;
+	}
+}
+
+.partners-more-content {
+	background: white;
+	@include border-radius(15px);
+	padding: 10px 50px 30px;
+	.more {
+		margin-top: 20px;
+		font-weight: bold;
+		text-align: right;
+	}
+}
+
+.more a {
+	display: inline-block;
+}
+
+.arts-crafts {
+	height: 100px;
+	width: auto;
+}
+
+.row.brands .col-sm-2 {
+	margin-top: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+.row.brands .col-sm-4 {
+	margin-top: 10px;
+}
+
+.row.brands .img-responsive {
+	max-height: 150px;
+	margin: auto;
+}
+
+.partners {
+	background-color: white;
+	margin: 50px 15px 30px;
+	padding: 15px;
+	@include border-radius(15px);
+	p {
+		padding: 0 50px;
+		font-size: 20px;
+		color: black;
+		line-height: 1.2;
+		text-align: center;	
+	}
+}
+
+.partners p:nth-child(4) {
+	text-align: right;
+}
+
+.carousel-control {
+	height: 30px;
+	width: 30px;
+    background-image: none !important;
+	font-size: 30px;
+	text-shadow: none;
+	opacity: 1;
+	color: $ocean-color;
+	top: 95px;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+	color: darken($ocean-color, 20%);
+}
+
+.left.carousel-control {
+	left: -8px;
+}
+
+.right.carousel-control {
+	right: -10px;
+}
+
+.thumbnail span {
+	padding: 10px;
+	@include border-radius(50%);
+	border: 5px solid transparent;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity 0.4s linear;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.thumbnail span:hover {
+	opacity: 1;
+	border: 5px solid $ocean-color;
+}
+
+.thumbnail small {
+	font-size: 12px;
+	font-weight: lighter;
+	text-transform: lowercase;
+}
+
+.thumbnail small:hover {
+	color: lighten($ocean-color, 20%);
+}
+
+.thumbnail {
+	padding: 0;
+	display: table;
+	position: relative;
+	margin: 40px auto;
+	background: transparent;
+	@include border-radius(50%);
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	&.one {
+		background-image: url(ref/farmers%20market3.jpg);
+	}
+	&.two {
+		background-image: url(ref/Paolo%20Gianfrancesco%20UrbanShape.JPG);
+		}
+	&.three {
+		background-image:  url(ref/alafoss%20wool%20accessories.jpg);
+	}
+	&.four {
+		background-image: url(ref/Kirsuberjatr%C3%A9%C3%B0.jpg);
+	}
+	&.five {
+		background-image: url(ref/66-handbag-broddgoltur-6x-very-small-copie.jpg);
+	}
+	&.six {
+		background-image: url(ref/hraunskart%20lava%20jewelry.jpg);
+	}
+	&.seven {
+		background-image: url(ref/hugdetta%20something%20fishy.jpg);
+	}
+	&.eight {
+		background-image: url(ref/Omnom%20chocolates2.jpg);
+	}
+	&.nine {
+		background-image: url(ref/vik%20prjonsdottir.jpg);
+	}
+	&.ten {
+		background-image: url(ref/solveigholmart.jpg);
+	}
+	&.eleven {
+		background-image: url(ref/jon%20helgi%20holmgeirs.jpg);
+	}
+	&.twelve {
+		background-image: url(ref/reykjavik%20letterpress.jpg);
+	}
+	&.thirteen {
+		background-image:url(ref/lafoss_Wool_Bl_4fd0b2f216b8f_grande.jpeg);
+	}
+	&.fourteen {
+		background-image: url(ref/raven%20design%20iceland.jpg);
+	}
+	&.fifteen {
+		background-image:url(ref/rosa%20valtingojer.jpg);
+	}
+	&.sixteen {
+		background-image: url(ref/ZAC-TQbL.png);
+	}
+}
+
+//INFO
+
+.info {
+	margin-top: 100px;
+	h2 a {
+		color: white;
+	}
+}
+
+.info-content {
+	text-align: justify;
+	font-size: 15px;
+	background: rgba(255,255,255,0.15);
+	margin: auto -10px;
+	@include border-radius(15px);
+	border: 5px solid rgba(255,255,255,0.3);
+	margin-top: 40px;
+	padding: 5px 15px;
+	h4 {
+		font-weight: bold;
+		text-decoration: underline;
+		font-size: 14px;
+	}
+}
+
+// FOOTER
+
+
+
+//MEDIA QUERIES
+
+@media only screen and (max-width: 1137px) {
+	.product-preview .product {
+		width: 90%;
+		height: 90%;
+	}
+    .lineup li {
+        font-size: 19px;
+    }
+    .lineup h3 {
+        font-size: 46px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+	.product-preview .product {
+		height: 40%;
+		width: 40%;
+	}
+    .lineup .row {
+        margin: 0;
+    }
+	.tickets .boat-window {
+		height: 150px;
+		width: 150px;
+	}
+	.buy-now, .sold-out {
+		height: 87.75px;
+		width: 87.75px;
+		top: 28px;
+		left: -6px;
+		p {
+			font-size: 44px;
+			line-height: 36px;
+		}
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.product-preview .product {
+		height: 90%;
+		width: 90%;
+	}
+    .lineup li {
+        font-size: 14px; 
+    }
+    .lineup h3 {
+        font-size: 32px;
+    }
+    .lineup {
+        margin-top: -50px;
+    }
+	#lineup-title {
+		top: 580px;
+	}
+}

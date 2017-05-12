@@ -1,0 +1,70 @@
+/*
+ * productColorizer - jQuery Plugin
+ * version: 1.1 May 2012
+ * @requires jQuery v1.6 or later
+ *
+ * Examples at http://nikorablin.com/sandbox/productColorizer/
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright 2012 Nik Korablin - nikorablin@gmail.com
+ *
+ */
+ 
+/* colorizer styles
+--------------------------------------------- */
+.mask {
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+/* swatch styles
+--------------------------------------------- */
+.swatch {
+	background-color: rgba(0,0,0,0.2);
+	margin-top: -52px;
+	position:absolute;
+	width: 98%;
+	margin-left: 2px;
+	padding: 10px 0;
+}
+
+.swatch:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.swatch a {
+	float: right;
+	margin: 0 10px;
+	display:inline-block;
+	width:20%;
+	height: 30px;
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+	background-image: linear-gradient(bottom, rgb(181,181,181) 53%, rgb(235,235,235) 52%);
+	background-image: -o-linear-gradient(bottom, rgb(181,181,181) 53%, rgb(235,235,235) 52%);
+	background-image: -moz-linear-gradient(bottom, rgb(181,181,181) 53%, rgb(235,235,235) 52%);
+	background-image: -webkit-linear-gradient(bottom, rgb(181,181,181) 53%, rgb(235,235,235) 52%);
+	background-image: -ms-linear-gradient(bottom, rgb(181,181,181) 53%, rgb(235,235,235) 52%);
+}
+
+.swatch a span {
+	display:block;
+	height:100%;
+}
+
+.swatch a.active span {
+	border:2px solid gray;
+	height:30px;
+}
+
+/* tooltip styles
+--------------------------------------------- */
+
